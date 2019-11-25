@@ -3,7 +3,10 @@
 
 # Part One
 # Load text file of two related variables from Excel or Text file
+# Assume that temperature (in F) and ice cream sales (in $) are positively correlated
+sales<-read.table("~/Desktop/ICB2019_Exercise09/sales.txt", sep=',',header=T,stringsAsFactors = F)
 # Produce a scatter plot of the two variables 
+sales2<-ggplot(sales,aes(x=Temperature,y=sales))+geom_point()
 
 # Part Two
 # Generate two figures summarizing the data in 'data.txt'
