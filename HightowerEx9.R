@@ -15,11 +15,17 @@ sales2<-ggplot(sales,aes(x=Temperature,y=sales))+geom_point()+geom_smooth(method
 # Generate two figures summarizing the data in 'data.txt'
 # Start by loading file into R
 data<-read.table("~/Desktop/ICB2019_Exercise09/data.txt",sep=',', header=T, stringsAsFactors=F)
-# Create barplot with the mean for each region
+# First, create barplot with the mean for each region
 # Set x variable equal to region, y variable equal to observations
 # Use stat_summary to select bar graph and mean of variable y (observations)
 # Color code bars by region using fill=region in aesthetics
 bar1<-ggplot(data,aes(x=region,y=observations))+stat_summary(geom="bar", fun.y="mean",aes(fill=region))
-# Generate a scatterplot with all of the observations
+# Add Axis Labels
+bar2<-bar1+xlab("Region")+ylab("Mean # of Observations")
+# Then, generate a scatterplot with all of the observations
+# Add axis labels 
+scatter1<-ggplot(data,aes(x=region,y=observations))+geom_point()
+scatter2<-scatter1+xlab("Region")+ylab("Observations")
 # Use 'geom_jitter()' function to make observations easier to see
+scatter3<-scatter2+geom_jitter()
 # What do the bar versus scatter plots tell us?
