@@ -29,3 +29,12 @@ scatter2<-scatter1+xlab("Region")+ylab("Observations")
 # Use 'geom_jitter()' function to make observations easier to see
 scatter3<-scatter2+geom_jitter()
 # What do the bar versus scatter plots tell us?
+# In the bar plot, the mean observation numbers all appear to be very similar (~15)
+# After looking at the scatter plot
+# The ranges for the four regions are all very diffrent
+# The north area has most values around 15 that contribute to the average
+# The east region appears to have a normal distribution centered around the mean
+# The south area has values above and below the mean that average out
+# The west area has observations at all values
+# In summary, the scatter plot gives a better idea of what the data look like
+# That we would miss out on had we only looked at the bar plot
